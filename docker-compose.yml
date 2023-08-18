@@ -1,0 +1,33 @@
+version: '3.5'
+
+networks:
+  host:
+    name: host
+    external: true
+
+
+services:
+  # --------------------------------------#
+  #               Postgres                #
+  # --------------------------------------#
+  postgres:
+    image: postgres:15
+    environment:
+      PGUSER: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+    restart: on-failure
+    healthcheck:
+      interval: 10s
+      retries: 60
+      start_period: 2s
+      #test: pg_isready -q -d $${POSTGRES_DB} -U $${POSTGRES_USER} | grep "ready to accept connections" || exit 1
+      test: ["CMD-SHELL", "pg_isready"]
+      timeout: 2s
+    volumes:
+      - ./volumes/postgres:/var/lib/postgresql/data

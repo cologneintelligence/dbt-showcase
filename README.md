@@ -5,12 +5,6 @@ This repository is a showcase for the usage of [dbt (data build tool)](https://d
 Be sure to checkout this guide from gitlab [Gitlab DBT Guide](https://about.gitlab.com/handbook/business-technology/data-team/platform/dbt-guide)
 ## Usage
 
-The usage section was written and tested for Windows WSL2 using Ubuntu (see the installation guide in the [CI Confluence](https://cologne-intelligence.atlassian.net/wiki/spaces/CIDD/pages/49676386/Setup+DE+Entwicklungsumgebung)). If you're using another system, some commands may vary.
-
-**Clone the Bitbucket repository to your local machine**
-
-`git clone https://bitbucket.cgn.co-in.de:8443/scm/cidd/de-dbt-example.git`
-
 **Setup a venv and install the required packages via poetry**
 
 See [Poetry Installation](https://python-poetry.org/docs/#installation) and [Poetry Usage](https://python-poetry.org/docs/basic-usage/) in case you do not have experience with it.
